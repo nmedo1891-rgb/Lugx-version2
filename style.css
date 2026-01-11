@@ -1,0 +1,348 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Orbitron', sans-serif;
+}
+
+/* ===== Animated Grid Background ===== */
+body{
+    background-color:#f5f7fb;
+    background-image:
+        linear-gradient(rgba(0,0,0,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,0,0,0.05) 1px, transparent 1px);
+    background-size:40px 40px;
+    animation:gridMove 20s linear infinite;
+    transition:background-color .4s, color .4s;
+}
+
+@keyframes gridMove{
+    from{
+        background-position:0 0, 0 0;
+    }
+    to{
+        background-position:400px 400px, 400px 400px;
+    }
+}
+/* Theme Button */
+/* Theme Toggle Button */
+.theme-btn{
+    background:transparent;
+    border:none;
+    cursor:pointer;
+    padding:5px;
+    position:relative;
+}
+
+/* Icons size */
+.theme-btn img{
+    width:26px;      /* صغّر الحجم من هنا */
+    height:26px;
+    transition:.3s;
+}
+
+/* Hover animation */
+.theme-btn:hover img{
+    transform:scale(1.15) rotate(10deg);
+}
+
+/* افتراضياً */
+#lightIcon{
+    display:none;
+}
+
+#darkIcon{
+    display:block;
+}
+
+/* لما يبقى Dark Mode */
+body.dark #lightIcon{
+    display:block;
+}
+
+body.dark #darkIcon{
+    display:none;
+}
+
+
+/* ===== DARK MODE ===== */
+body.dark{
+    background-color:#0b0f2a;
+    background-image:
+        linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px);
+}
+
+
+body.dark nav{
+    background:#05091f;
+}
+
+body.dark .section{
+    color:#fff;
+}
+
+body.dark .game-card{
+    background:#11163a;
+    color:#fff;
+}
+
+body.dark footer{
+    background:#05091f;
+}
+
+
+/* Navbar */
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    padding:20px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:#0b5cff;
+    z-index:1000;
+}
+/* ===== Theme Toggle Button ===== */
+.theme-btn{
+    background:transparent;
+    border:none;
+    cursor:pointer;
+    padding:5px;
+}
+
+/* تصغير حجم الصور */
+.theme-btn img{
+    width:24px;      /* غيّر الرقم لو حابب أصغر أو أكبر */
+    height:24px;
+    transition:.3s ease;
+}
+
+/* حركة خفيفة */
+.theme-btn:hover img{
+    transform:scale(1.15);
+}
+
+/* ===== التحكم في الظهور ===== */
+/* الوضع الافتراضي: Light */
+#darkIcon{
+    display:block;
+}
+
+#lightIcon{
+    display:none;
+}
+
+/* لما يتحول Dark */
+body.dark #darkIcon{
+    display:none;
+}
+
+body.dark #lightIcon{
+    display:block;
+}
+
+
+
+nav h1{
+    color:#fff;
+    font-weight:800;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:30px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:#fff;
+    transition:.3s;
+}
+
+nav ul li a:hover{
+    color:#ffb703;
+}
+
+.signin{
+    background:#ffb703;
+    color:white;
+    padding:8px 18px;
+    border-radius:20px;
+}
+
+/* Hero */
+.hero{
+    min-height:100vh;
+    background:#0b5cff;
+    padding:120px 8% 50px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    animation:fadeIn 1.2s ease;
+}
+
+.hero-text{
+    width:50%;
+    color:#fff;
+}
+
+.hero-text h2{
+    font-size:40px;
+    margin-bottom:20px;
+}
+
+.hero-text p{
+    line-height:1.7;
+    opacity:.9;
+}
+
+.search-box{
+    margin-top:25px;
+    display:flex;
+    gap:10px;
+}
+
+.search-box input{
+    outline: none;
+    padding:12px 20px;
+    border-radius:30px;
+    border:none;
+    width:260px;
+}
+
+.search-box button{
+    
+    padding:12px 25px;
+    border:none;
+    border-radius:30px;
+    background:#ffb703;
+    cursor:pointer;
+}
+
+.hero-img{
+    width:40%;
+}
+
+.hero-img img{
+    width:100%;
+    border-radius:25px;
+    animation:float 4s ease-in-out infinite;
+}
+
+/* Trending */
+.section{
+    padding:70px 8%;
+    animation:fadeIn 1.2s ease;
+}
+
+.section-title 
+{
+    margin-bottom:40px;
+}
+.game-info{
+    padding:15px 20px;}
+
+.games{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+}
+
+.game-card{
+    position:relative;
+    background:#fff;
+    border-radius:18px;
+    overflow:hidden;
+    transition:.4s;
+}
+
+.game-card img{
+    width:100%;
+    height:300px;
+    object-fit:cover;
+}
+
+.games:hover .game-card:not(:hover){
+    filter:blur(3px);
+    opacity:.6;
+}
+
+.game-card:hover{
+    transform:translateY(-10px) scale(1.03);
+    box-shadow:0 20px 40px rgba(0,0,0,.2);
+}
+
+.price{
+    position:absolute;
+    bottom:-60px;
+    width:100%;
+    background:rgba(0,0,0,.85);
+    color:#ffb703;
+    text-align:center;
+    padding:15px;
+    transition:.4s;
+}
+
+.game-card:hover .price{
+    bottom:0;
+}
+
+/* Footer */
+footer{
+    background:#0b0f2a;
+    color:#fff;
+    padding:50px 8% 20px;
+}
+
+.footer-content{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+.social{
+    display:flex;
+    gap:15px;
+}
+
+.social a{
+    color:#fff;
+    font-size:22px;
+    transition:.3s;
+}
+
+.social a:hover{
+    color:#ffb703;
+    transform:scale(1.2);
+}
+
+.watermark{
+    text-align:center;
+    margin-top:30px;
+    opacity:.5;
+}
+
+/* Animations */
+@keyframes fadeIn{
+    from{opacity:0;transform:translateY(30px)}
+    to{opacity:1;transform:translateY(0)}
+}
+
+@keyframes float{
+    0%,100%{transform:translateY(0)}
+    50%{transform:translateY(-15px)}
+}
+
+/* Responsive */
+@media(max-width:900px){
+    .hero{
+        flex-direction:column;
+        text-align:center;
+    }
+    .hero-text,.hero-img{
+        width:100%;
+    }
+}
