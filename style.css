@@ -155,6 +155,7 @@ nav h1{
 nav ul{
     list-style:none;
     display:flex;
+    align-items: center;
     gap:30px;
 }
 
@@ -170,10 +171,21 @@ nav ul li a:hover{
 
 
 .signin{
-    color:white;
-    background:#ffb700;
-    padding:8px 18px;
-    border-radius:20px;
+    display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 40px;
+  padding: 10px 10px;
+
+  background: #ffc107;
+  color:white;
+  font-weight: 600;
+  border-radius: 20px;
+  text-decoration: none;
+  margin: 0 10px;
+
+  white-space: nowrap;
 }
 :hover.signin{
     background:#ffd569;
@@ -429,17 +441,74 @@ footer{
     background: #ffd365;
 }
 
+.img-games
+{
+   cursor: pointer;
+
+}
+
+/* Game interaction */
+.game-details {
+  margin-top: 40px;
+  width: 100%;
+  max-width: 600px;
+  padding: 20px 30px;
+  background: rgba(20, 30, 60, 0.95);
+  border-radius: 20px;
+  color: #fff;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 0.5s ease;
+}
+
+.game-details.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.game-card.active {
+  position: absolute;
+  z-index: 10;
+  transition: transform 0.6s ease;
+}
+
+.game-card.fade {
+  opacity: 0;
+  pointer-events: none;
+}
+
+
+
+
+
+
+
+
+
 /* ===== MOBILE CLEAN FIX ===== */
 @media (max-width: 768px) {
+
+      .sign-in {
+    height: 38px;
+    padding: 0 14px;
+    font-size: 14px;
+  }
 
   /* Navbar */
   nav {
     padding: 12px 4%;
     height: auto;
+     flex-wrap: wrap;
+    row-gap: 12px;
   }
 
   nav h1 {
     font-size: 20px;
+  }
+
+  .nav-links {
+    width: 100%;
+    justify-content: center;
   }
 
   
@@ -447,7 +516,7 @@ footer{
   /* Hero */
   .hero {
     min-height: auto;
-    padding: 90px 4% 40px;
+    
     flex-direction: column;
     gap: 25px;
   }
