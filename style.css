@@ -94,7 +94,7 @@ body.dark footer{
 
 /* Navbar */
 nav{
-    position:fixed;
+    
     top:0;
     width:100%;
     padding:20px 8%;
@@ -103,6 +103,7 @@ nav{
     align-items:center;
     background:#0b5cff;
     z-index:1000;
+    
 }
 /* ===== Theme Toggle Button ===== */
 .theme-btn{
@@ -110,6 +111,7 @@ nav{
     border:none;
     cursor:pointer;
     padding:5px;
+    
 }
 
 /* تصغير حجم الصور */
@@ -163,21 +165,27 @@ nav ul li a{
 }
 
 nav ul li a:hover{
-    color:#ffb703;
+    color:#ffd569;
 }
 
+
 .signin{
-    background:#ffb703;
     color:white;
+    background:#ffb700;
     padding:8px 18px;
     border-radius:20px;
+}
+:hover.signin{
+    background:#ffd569;
+    color:#ffffff;
 }
 
 /* Hero */
 .hero{
-    min-height:100vh;
+    
     background:#0b5cff;
-    padding:120px 8% 50px;
+    padding: 90px 8% 50px;
+
     display:flex;
     align-items:center;
     justify-content:space-between;
@@ -214,12 +222,17 @@ nav ul li a:hover{
 }
 
 .search-box button{
-    
+    color: #e0f0ff;
     padding:12px 25px;
+    outline: none;
     border:none;
     border-radius:30px;
     background:#ffb703;
     cursor:pointer;
+}
+.search-box button:hover{
+    background:#ffd569;
+    color:#ffffff;
 }
 
 .hero-img{
@@ -325,6 +338,8 @@ footer{
     opacity:.5;
 }
 
+
+
 /* Animations */
 @keyframes fadeIn{
     from{opacity:0;transform:translateY(30px)}
@@ -337,12 +352,182 @@ footer{
 }
 
 /* Responsive */
-@media(max-width:900px){
-    .hero{
-        flex-direction:column;
-        text-align:center;
-    }
-    .hero-text,.hero-img{
-        width:100%;
-    }
+
+
+/* section general fix */
+
+
+/* title fix */
+.section-title {
+    margin-bottom: 40px;
+    text-align: center;
 }
+
+.section-title h3 {
+    font-size: 32px;
+    color: var(--text-color);
+    font-family: 'Orbitron', sans-serif;
+}
+
+/* ===== FORM CONTAINER ===== */
+.neon-form {
+    max-width: 420px;
+    margin: 60px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* ===== INPUT WRAPPER ===== */
+.neon-input {
+    width: 100%;
+}
+
+/* ===== INPUTS & TEXTAREA ===== */
+.neon-input input,
+.neon-input textarea {
+    width: 100%;
+    padding: 14px 16px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 14px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    outline: none;
+    background: #ffffff;
+    color: #000000;
+    box-sizing: border-box;
+}
+
+/* textarea height */
+.neon-input textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* ===== FOCUS ===== */
+.neon-input input:focus,
+.neon-input textarea:focus {
+    background: #e0f0ff;
+}
+
+/* ===== BUTTON ===== */
+.send-btn {
+    width: 160px;
+    align-self: center;
+    padding: 12px 0;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 14px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    background: #ffb703;
+    color: white;
+    transition: background 0.2s ease;
+}
+
+.send-btn:hover {
+    background: #ffd365;
+}
+
+/* ===== MOBILE CLEAN FIX ===== */
+@media (max-width: 768px) {
+
+  /* Navbar */
+  nav {
+    padding: 12px 4%;
+    height: auto;
+  }
+
+  nav h1 {
+    font-size: 20px;
+  }
+
+  
+
+  /* Hero */
+  .hero {
+    min-height: auto;
+    padding: 90px 4% 40px;
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .hero-text {
+    width: 100%;
+  }
+
+  .hero-text h2 {
+    font-size: 26px;
+  }
+
+  .hero-text p {
+    font-size: 14px;
+  }
+
+  .search-box {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .search-box input,
+  .search-box button {
+    width: 100%;
+  }
+
+  /* Hero Image */
+  .hero-img {
+    width: 100%;
+  }
+
+ 
+
+  /* Section */
+  .section {
+    padding: 60px 4%;
+    min-height: auto;
+  }
+
+  /* Cards */
+  .game-card img {
+    height: 220px;
+  }
+}
+@media (max-width: 768px) {
+  .hero-img{
+    max-width: 260px;   /* صغّر الرقم لو حابب */
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    gap: 12px;
+    font-size: 14px;
+  }
+
+  .signin {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
