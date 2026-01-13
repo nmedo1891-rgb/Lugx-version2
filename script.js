@@ -4,21 +4,39 @@ window.addEventListener("load", () => {
 });
 
 // Search button
-document.getElementById("searchBtn").addEventListener("click", () => {
-    alert("Search feature coming soon 🔥");
-});
-const toggleBtn = document.getElementById("themeToggle");
+// ================= DARK MODE LOGIC =================
+window.addEventListener("DOMContentLoaded", () => {
+    const toggleBtn = document.getElementById("themeToggle");
+    const darkIcon = document.getElementById("darkIcon");
+    const lightIcon = document.getElementById("lightIcon");
 
-// عند الضغط
-toggleBtn.addEventListener("click", () => {
-    document.body.classList.toggle("dark");
+    // لو الصفحة مفيهاش زرار الدارك مود
+    if (!toggleBtn || !darkIcon || !lightIcon) return;
 
-    if (document.body.classList.contains("dark")) {
-        localStorage.setItem("theme", "dark");
+    // تحميل الوضع المحفوظ
+    const savedTheme = localStorage.getItem("theme");
+
+    if (savedTheme === "dark") {
+        document.body.classList.add("dark");
+        darkIcon.style.display = "none";
+        lightIcon.style.display = "block";
     } else {
-        localStorage.setItem("theme", "light");
+        document.body.classList.remove("dark");
+        darkIcon.style.display = "block";
+        lightIcon.style.display = "none";
     }
+
+    // عند الضغط على الزرار
+    toggleBtn.addEventListener("click", () => {
+        const isDark = document.body.classList.toggle("dark");
+
+        localStorage.setItem("theme", isDark ? "dark" : "light");
+
+        darkIcon.style.display = isDark ? "none" : "block";
+        lightIcon.style.display = isDark ? "block" : "none";
+    });
 });
+
 
 // تحميل الوضع المحفوظ
 window.addEventListener("load", () => {
@@ -26,5 +44,14 @@ window.addEventListener("load", () => {
         document.body.classList.add("dark");
     }
 });
+
+
+
+
+
+
+
+
+
 
 
